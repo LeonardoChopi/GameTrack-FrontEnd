@@ -1,0 +1,17 @@
+@import "styles/header.css";
+@import "styles/carrucel.css";
+@import "styles/juegosinicio.css";
+@import "styles/footer.css";
+
+html{
+    scrollbar-color: #093552 white;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+a{
+    text-decoration: none;
+}
