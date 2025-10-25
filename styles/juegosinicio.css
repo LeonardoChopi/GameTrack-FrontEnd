@@ -14,14 +14,14 @@
     justify-content: flex-start;
     margin-bottom: 0px;
     overflow-x: auto;
-    overflow-y: hidden; /* ensure scrolling only on the x axis */
+    overflow-y: hidden;
 }
 
 .juegoinicio{
     transition: 300ms;
     margin: 6px;
-    position: relative; /* make this the positioning context for the overlay */
-    width: 250px; /* match the image width */
+    position: relative;
+    width: 250px;
     display: inline-block;
 }
 
@@ -53,7 +53,7 @@
     text-align: center;
     width: calc(100% - 12px);
     box-sizing: border-box;
-    pointer-events: none; /* allow clicks to pass to underlying links if any */
+    pointer-events: none;
 }
 
 .juegoinicio:hover img{
@@ -63,7 +63,7 @@
 .masjuegos{
     transition: 300ms;
     position: relative;
-    width: 250px; /* match other cards */
+    width: 250px;
     display: inline-block;
     background-color: rgb(190, 190, 190);
     border-radius: 8px;
@@ -103,7 +103,6 @@
     text-align: center;
     width: calc(100% - 12px);
     box-sizing: border-box;
-    /* pointer-events: none; */
     position: absolute;
 }
 

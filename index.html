@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="style.css">
     <!-- scripts -->
     <script src="scripts/carrucel.js"></script>
+    <script src="scripts/menu.js"></script>
 </head>
 <body>
     <header>
@@ -23,12 +24,25 @@
                 <a href="">Contacto</a>
             </nav>
             <div class="user">
-            <button class="barra">&#9776;</button>
-            <a href="">
-                <img src="img/user.svg" alt="User">
-            </a>
+                <button class="barra" id="menuToggle">&#9776;</button>
+                <a href="">
+                    <img src="img/user.svg" alt="User">
+                </a>
             </div>        
+            <div class="menu-movil" id="menuMovil">
+                <nav class="nav-movil">
+                <a href="">Juegos</a>
+                <a href="">Bibilotaca</a>
+                <a href="">Top</a>
+                <a href="">Contacto</a>
+                <a href="" class="user-link">
+                    <img src="img/user.svg" alt="User">Mi Cuenta
+                </a>
+                </nav>
+            </div>
     </header>
+
+
     <main>
     <section class="imagenes-principales">
         <div class="carruselinicio">

@@ -1,0 +1,37 @@
+.juegos {
+    /* display: flex; */
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    width: 95%;
+    height: 100%;
+    text-align: center;
+    
+}
+
+.card{
+    width: 300px;
+    border-radius: 15px;
+    background-color: rgb(235, 234, 234);
+    padding: 15px 0px;
+}
+
+.card img{
+    width: 270px;
+    border-radius: 5px;
+    /* border-radius: 15px; */
+}
+
+.card a{
+    text-decoration: none;
+    color: white;
+    background-color: #093552;
+    border-radius: 25px;
+    padding: 10px 15px;
+    transition: 300ms;
+}
+
+.card a:hover{
+    background-color: rgb(25, 101, 137);
+    transition: 300ms;
+}
