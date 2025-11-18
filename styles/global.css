@@ -1,0 +1,239 @@
+/* ========================== */
+/* RESET BÁSICO */
+/* ========================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+body {
+  background: #0f0f0f;
+  color: #f1f1f1;
+}
+
+/* ========================== */
+/* HEADER */
+/* ========================== */
+header {
+  width: 100%;
+  padding: 3px 20px;
+  background: #1a1a1a;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 2px solid #333;
+}
+
+.Logo img {
+  width: 120px;
+  filter: drop-shadow(0px 0px 2px #000);
+}
+
+header nav {
+  display: flex;
+  gap: 25px;
+}
+
+header nav a {
+  color: #ddd;
+  font-size: 1.1rem;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+header nav a:hover {
+  color: #7f9fff;
+}
+
+/* ========================== */
+/* MENÚ MÓVIL */
+/* ========================== */
+.barra {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: #fff;
+}
+
+.menu-movil {
+  display: none;
+  background: #1a1a1a;
+  width: 100%;
+  padding: 20px;
+  position: absolute;
+  top: 70px;
+  left: 0;
+}
+
+.nav-movil {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.nav-movil a {
+  color: #ddd;
+  font-size: 1.2rem;
+  text-decoration: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  header nav {
+    display: none;
+  }
+
+  .barra {
+    display: block;
+  }
+}
+
+/* ========================== */
+/* SECCIONES HOME */
+/* ========================== */
+
+.SubTitInicio h2 {
+  margin-bottom: 20px;
+  padding-left: 10px;
+  border-left: 4px solid #7f9fff;
+}
+
+.imagenes-principales img {
+  width: 100%;
+  max-height: 350px;
+  object-fit: cover;
+  border-bottom: 2px solid #333;
+}
+
+/* ========================== */
+/* CARDS DE JUEGOS */
+/* ========================== */
+
+.contenedor-juegos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 20px;
+  padding: 20px 40px;
+}
+
+.juegoinicio,
+.juego-card {
+  background: #1c1c1c;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+  transition: 0.3s;
+  border: 1px solid #333;
+}
+
+.juegoinicio:hover,
+.juego-card:hover {
+  transform: scale(1.05);
+  border-color: #7f9fff;
+}
+
+.juegoinicio img,
+.juego-card img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.juegoinicio h3,
+.juego-card h3 {
+  margin-top: 10px;
+  font-size: 1rem;
+  color: #fff;
+}
+
+/* ========================== */
+/* PÁGINA BIBLIOTECA */
+/* ========================== */
+
+.biblioteca h1 {
+  margin: 30px;
+  text-align: center;
+}
+
+.biblioteca .contenedor-juegos {
+  padding-top: 0;
+}
+
+/* ========================== */
+/* PÁGINA DETALLE */
+/* ========================== */
+
+.detalle-juego {
+  width: 80%;
+  margin: auto;
+  padding: 30px;
+}
+
+.detalle-juego img {
+  width: 250px;
+  border-radius: 15px;
+  margin-bottom: 20px;
+}
+
+.detalle-juego p {
+  margin: 8px 0;
+  font-size: 1.1rem;
+}
+
+/* Reseñas */
+.reseña {
+  background: #1f1f1f;
+  padding: 15px;
+  border-radius: 8px;
+  margin: 10px 0;
+  border-left: 4px solid #7f9fff;
+}
+
+/* ========================== */
+/* ESTADÍSTICAS */
+/* ========================== */
+.estadisticas {
+  width: 80%;
+  margin: auto;
+  padding: 40px 20px;
+}
+
+.estadistica-box {
+  background: #1c1c1c;
+  border: 1px solid #333;
+  padding: 25px;
+  border-radius: 10px;
+  margin: 20px auto;
+  width: 50%;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.estadistica-box:hover {
+  transform: scale(1.03);
+  border-color: #7f9fff;
+}
+
+.estadistica-box h3 {
+  color: #7f9fff;
+  margin-bottom: 10px;
+}
+
+/* ========================== */
+/* FOOTER */
+/* ========================== */
+footer {
+  padding: 20px;
+  text-align: center;
+  background: #111;
+  margin-top: 40px;
+  border-top: 1px solid #333;
+}
+footer p {
+  color: #999;
+}
