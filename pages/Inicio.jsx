@@ -1,89 +1,58 @@
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import LogoImg from "../assets/logo.png"; // Ajustar según tu carpeta
+import juegosService from "../services/juegosService";
 
-const Inicio = () => {
+function Inicio() {
+  const [ultimos, setUltimos] = useState([]);
+
+  useEffect(() => {
+    const cargar = async () => {
+      try {
+        const data = await juegosService.getJuegos();
+        setUltimos(data.slice(-4)); // últimos 4
+      } catch (err) {
+        console.error("Error cargando juegos:", err);
+      }
+    };
+
+    cargar();
+  }, []);
+
   return (
-    <>
-      {/* HEADER */}
-      <header>
-        <div className="Logo">
-          <Link to="/">
-            <img src={LogoImg} alt="Logo" />
-          </Link>
+    <main className="inicio">
+      {/* Banner principal */}
+      <section className="banner">
+        <img
+          src="https://i.imgur.com/NzWQ0yL.jpeg"
+          alt="Banner GameTrack"
+          className="banner-img"
+        />
+        <h1 className="titulo-principal">Bienvenido a GameTrack</h1>
+      </section>
+
+      {/* Últimos agregados */}
+      <section className="ultimos">
+        <h2>Últimos agregados</h2>
+
+        <div className="lista-juegos">
+          {ultimos.map((j) => (
+            <Link to={`/juego/${j._id}`} className="juego-card" key={j._id}>
+              <img src={j.imagen} alt={j.titulo} />
+              <h3>{j.titulo}</h3>
+              <p>{j.genero}</p>
+            </Link>
+          ))}
         </div>
+      </section>
 
-        <nav>
-          <Link to="/biblioteca">Biblioteca</Link>
-          <Link to="/juegos">Juegos</Link>
-        </nav>
-
-        <button className="barra" id="menuToggle">&#9776;</button>
-
-        <div className="menu-movil" id="menuMovil">
-          <nav className="nav-movil">
-            <Link to="/biblioteca">Biblioteca</Link>
-            <Link to="/juegos">Juegos</Link>
-          </nav>
-        </div>
-      </header>
-
-      {/* MAIN */}
-      <main>
-        {/* Carrusel */}
-        <section className="imagenes-principales">
-          <div className="carruselinicio">
-            <div className="imagenes">
-              <img
-                src="https://i.ytimg.com/vi_webp/l6RRdTFuepk/maxresdefault.webp"
-                alt="Imagen principal"
-              />
-            </div>
-          </div>
-        </section>
-
-        {/* Últimos Agregados */}
-        <section className="ultimosagregados SubTitInicio">
-          <h2>Últimos Agregados</h2>
-          <div className="contenedor-juegos">
-            {[...Array(5)].map((_, i) => (
-              <div className="juegoinicio" key={i}>
-                <Link to="/biblioteca">
-                  <img
-                    src="https://i.ytimg.com/vi_webp/l6RRdTFuepk/maxresdefault.webp"
-                    alt="Juego"
-                  />
-                  <h3>Juego {i + 1}</h3>
-                </Link>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* Más Populares */}
-        <section className="maspopulares SubTitInicio">
-          <h2>Más Populares</h2>
-          <div className="contenedor-juegos">
-            {[...Array(5)].map((_, i) => (
-              <div className="juegoinicio" key={i}>
-                <Link to="/biblioteca">
-                  <img
-                    src="https://i.ytimg.com/vi_webp/l6RRdTFuepk/maxresdefault.webp"
-                    alt="Juego popular"
-                  />
-                  <h3>Juego Popular {i + 1}</h3>
-                </Link>
-              </div>
-            ))}
-          </div>
-        </section>
-      </main>
-
-      {/* FOOTER */}
-      <footer>
-        <p>GameTrack &copy; 2025</p>
-      </footer>
-    </>
+      {/* Botón Biblioteca */}
+      <section className="cta">
+        <Link className="btn" to="/biblioteca">
+          Ver mi biblioteca
+        </Link>
+      </section>
+    </main>
   );
-};
+}
 
 export default Inicio;
